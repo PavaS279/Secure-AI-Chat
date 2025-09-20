@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/sidebar";
 import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { BarChart2, BookOpen, Search, LogOut } from "lucide-react";
+import { BarChart2, BookOpen, Search, LogOut, Puzzle } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ThreatHistoryProvider } from "@/contexts/threat-history-context";
@@ -50,6 +50,21 @@ export default function DashboardLayout({
                   <Link href="/analyze">
                     <Search />
                     <span>Analyze</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  asChild
+                  tooltip={{
+                    children: "Extension",
+                    side: "right",
+                    align: "center",
+                  }}
+                >
+                  <Link href="/extension">
+                    <Puzzle />
+                    <span>Extension</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>

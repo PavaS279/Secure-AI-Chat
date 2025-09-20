@@ -68,7 +68,23 @@ This empowers any user to make a safe decision, even if they aren't a security e
 
 ---
 
-## 4. Improving the AI with Feedback
+## 4. Real-time Protection (Navigate to "Extension" Page)
+
+"SecureChat AI isn't just for manual scans. It's designed to provide proactive, real-time protection through a **browser extension**.
+
+This page simulates what that extension's popup would look like.
+
+*   **Threat Indicator:** At the center, you see the **Threat Indicator**. This animated shield gives you an immediate visual cue about the safety of the current web page. It cycles through 'Safe', 'Warning', and 'Danger' states to show how it would react to different threats.
+
+*   **Real-time Detections:** Below, the extension provides a live summary of what it's doing in the background—counting safe links, blocking trackers, and identifying malicious scripts.
+
+This feature ensures you are protected automatically as you browse, without having to manually copy and paste content into the app. It's seamless, always-on security."
+
+---
+
+## 5. Improving the AI with Feedback
+
+(Navigate back to the "Analyze" page and show a previous result)
 
 "A key feature of SecureChat AI is its ability to learn. Notice these **feedback buttons** (thumbs up/down) at the bottom of the analysis card.
 
@@ -76,7 +92,7 @@ If a user feels the analysis was correct or incorrect, they can provide feedback
 
 ---
 
-## 5. Security Awareness Training (Navigate to "Training" Page)
+## 6. Security Awareness Training (Navigate to "Training" Page)
 
 "Finally, prevention is just as important as detection. The **Security Awareness Training** page is a resource for users to educate themselves.
 
@@ -84,12 +100,12 @@ It contains an accordion of frequently asked questions about common threats like
 
 ---
 
-## 6. Conclusion
+## 7. Conclusion
 
 "So, to summarize, SecureChat AI is not just a tool—it's a complete defense system.
 
-*   It **Detects** threats in real-time using powerful AI.
-*   It **Informs** users with clear, easy-to-understand analysis.
+*   It **Detects** threats in real-time with both manual and automated analysis.
+*   It **Informs** users with clear, easy-to-understand results.
 *   It **Educates** them on how to recognize and avoid threats.
 *   And it **Improves** over time with user feedback.
 
