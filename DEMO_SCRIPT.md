@@ -1,4 +1,3 @@
-
 # SecureChat AI - Demo Script
 
 ## 1. Introduction (Start on the Dashboard Page)
@@ -86,7 +85,21 @@ Right now, it's empty, so let's generate some data by analyzing a few potential 
 
 ---
 
-## 4. Real-time Protection Simulation (Navigate to "Extension" Page)
+## 4. Automated Inbox Scanning (Navigate to "Inbox" Page)
+
+"Manually checking every message can be tedious. That's why we've built the **Automated Inbox Scanner**. This feature connects directly to your email provider to scan your inbox proactively."
+
+"First, I'll connect my Google account. This uses a secure OAuth flow, so the app never sees my password."
+
+**(Click "Connect to Gmail" and complete the sign-in process).**
+
+"Now that my account is connected, I can click **Scan Inbox Now**."
+
+"The system begins to scan a sample of my recent emails in the background. It analyzes each one for the same threats we saw earlier. As the results come in, you can see them categorized by risk level right here. This demonstrates how SecureChat AI can provide continuous, automated protection for your most critical communication channel, flagging threats before you even open them."
+
+---
+
+## 5. Real-time Protection Simulation (Navigate to "Extension" Page)
 
 "SecureChat AI is also designed to provide proactive protection through a **browser extension**. This page simulates what that extension's popup would look like."
 
@@ -96,7 +109,7 @@ Right now, it's empty, so let's generate some data by analyzing a few potential 
 
 ---
 
-## 5. Improving the AI with Feedback
+## 6. Improving the AI with Feedback
 
 (Navigate back to the "Analyze" page and show a previous result)
 
@@ -104,18 +117,18 @@ Right now, it's empty, so let's generate some data by analyzing a few potential 
 
 ---
 
-## 6. Security Awareness Training (Navigate to "Training" Page)
+## 7. Security Awareness Training (Navigate to "Training" Page)
 
 "Finally, prevention is just as important as detection. The **Security Awareness Training** page is a resource for users to educate themselves. It contains an accordion of frequently asked questions about common threats like phishing and social engineering. This provides users with the fundamental knowledge they need to stay safe online."
 
 ---
 
-## 7. Conclusion
+## 8. Conclusion
 
 "So, to summarize, SecureChat AI is not just a tool—it's a complete, multi-layered defense system.
 
 *   It **Detects** threats across text, URLs, images, and audio.
-*   It **Informs** users with clear, AI-driven results.
+*   It **Automates** protection by scanning your inbox directly.
 *   It **Protects** proactively by scanning web page content in real-time.
 *   It **Educates** users on how to recognize and avoid threats.
 *   And it **Improves** over time with user feedback.
