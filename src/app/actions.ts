@@ -4,6 +4,7 @@
 import { analyzeMessageForPhishing, type AnalyzeMessageForPhishingInput } from '@/ai/flows/analyze-message-for-phishing';
 import { improveDetectionWithFeedback, type ImproveDetectionWithFeedbackInput } from '@/ai/flows/improve-detection-with-feedback';
 import { scanURLForThreats, type ScanURLForThreatsInput } from '@/ai/flows/scan-url-for-threats';
+import { analyzePageForVulnerabilities, type AnalyzePageForVulnerabilitiesInput } from '@/ai/flows/analyze-page-for-vulnerabilities';
 
 export async function analyzeMessageAction(input: AnalyzeMessageForPhishingInput) {
     try {
@@ -32,5 +33,15 @@ export async function submitFeedbackAction(input: ImproveDetectionWithFeedbackIn
     } catch (error) {
         console.error("Error in submitFeedbackAction:", error);
         return { error: 'Failed to submit feedback.' };
+    }
+}
+
+export async function analyzePageAction(input: AnalyzePageForVulnerabilitiesInput) {
+    try {
+        const result = await analyzePageForVulnerabilities(input);
+        return { success: result };
+    } catch (error) {
+        console.error("Error in analyzePageAction:", error);
+        return { error: 'Failed to analyze page. Please try again.' };
     }
 }
