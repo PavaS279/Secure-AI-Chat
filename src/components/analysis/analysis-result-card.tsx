@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Skeleton } from "@/components/ui/skeleton";
 import type { AnalysisResult } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
-import { ShieldAlert, ShieldCheck, ShieldQuestion, ListChecks, Info } from "lucide-react";
+import { ShieldAlert, ShieldCheck, ShieldQuestion, ListChecks, Info, FileText } from "lucide-react";
 import FeedbackButtons from "./feedback-buttons";
 
 const RiskIndicator = ({ riskLevel }: { riskLevel: 'low' | 'medium' | 'high' }) => {
@@ -76,6 +76,9 @@ export default function AnalysisResultCard({
     );
   }
 
+  const isMediaAnalysis = 'transcribedText' in result;
+  const threats = 'threats' in result ? result.threats : result.specificThreats;
+
   return (
     <Card className="bg-gradient-to-br from-card to-card/60">
       <CardHeader>
@@ -86,11 +89,18 @@ export default function AnalysisResultCard({
         <CardDescription>{result.explanation}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
+
+        {isMediaAnalysis && (
+          <div>
+            <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2"><FileText className="h-5 w-5 text-accent"/>Transcribed Text</h3>
+            <p className="text-sm text-muted-foreground italic bg-muted/50 p-3 rounded-md">{result.transcribedText}</p>
+          </div>
+        )}
+
         <div>
           <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2"><ShieldAlert className="h-5 w-5 text-accent"/>Specific Threats</h3>
           <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-            {result.threats?.map((threat, index) => <li key={index}>{threat}</li>) ?? 
-             result.specificThreats?.map((threat, index) => <li key={index}>{threat}</li>)}
+            {threats.map((threat, index) => <li key={index}>{threat}</li>)}
           </ul>
         </div>
         <div>

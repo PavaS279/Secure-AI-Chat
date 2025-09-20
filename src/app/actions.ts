@@ -5,6 +5,9 @@ import { analyzeMessageForPhishing, type AnalyzeMessageForPhishingInput } from '
 import { improveDetectionWithFeedback, type ImproveDetectionWithFeedbackInput } from '@/ai/flows/improve-detection-with-feedback';
 import { scanURLForThreats, type ScanURLForThreatsInput } from '@/ai/flows/scan-url-for-threats';
 import { analyzePageForVulnerabilities, type AnalyzePageForVulnerabilitiesInput } from '@/ai/flows/analyze-page-for-vulnerabilities';
+import { analyzeImageForPhishing, type AnalyzeImageForPhishingInput } from '@/ai/flows/analyze-image-for-phishing';
+import { analyzeAudioForPhishing, type AnalyzeAudioForPhishingInput } from '@/ai/flows/analyze-audio-for-phishing';
+
 
 export async function analyzeMessageAction(input: AnalyzeMessageForPhishingInput) {
     try {
@@ -43,5 +46,25 @@ export async function analyzePageAction(input: AnalyzePageForVulnerabilitiesInpu
     } catch (error) {
         console.error("Error in analyzePageAction:", error);
         return { error: 'Failed to analyze page. Please try again.' };
+    }
+}
+
+export async function analyzeImageAction(input: AnalyzeImageForPhishingInput) {
+    try {
+        const result = await analyzeImageForPhishing(input);
+        return { success: result };
+    } catch (error) {
+        console.error("Error in analyzeImageAction:", error);
+        return { error: 'Failed to analyze image. Please try again.' };
+    }
+}
+
+export async function analyzeAudioAction(input: AnalyzeAudioForPhishingInput) {
+    try {
+        const result = await analyzeAudioForPhishing(input);
+        return { success: result };
+    } catch (error) {
+        console.error("Error in analyzeAudioAction:", error);
+        return { error: 'Failed to analyze audio. Please try again.' };
     }
 }
