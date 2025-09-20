@@ -75,11 +75,15 @@ Right now, it's empty, so let's generate some data by analyzing a few potential 
 
 "The threats don't just come through text; they also come through voice calls, a technique known as 'vishing'. Let's test this on the **Audio** tab."
 
-**(Upload a short audio file of a vishing attempt. For example, a recording saying: "This is an urgent message from the IRS. A lawsuit has been filed against you. To avoid legal action, call us back immediately at this number...").**
+"Here, we can either upload a suspicious voicemail file or record audio directly in the browser. For this example, let's record a message."
 
-"I'm now uploading a suspicious voicemail I received."
+**(Click "Record Audio"). Your browser will ask for microphone permission. Allow it.**
 
-"By clicking **Analyze Audio**, the app transcribes the speech to text and then runs the same security analysis."
+**(Record yourself saying something like: "This is an urgent message from the IRS. A lawsuit has been filed against you. To avoid legal action, call us back immediately at this number...").**
+
+**(Click "Stop Recording").**
+
+"Now that we have the recording, I'll click **Analyze Audio**. The app transcribes my speech to text and then runs the same security analysis."
 
 "The AI transcribes the message and correctly identifies it as a **High-Risk** threat, pointing out the impersonation of a government authority (IRS) and the use of fear and urgency. This is crucial for protecting against phone-based scams."
 
