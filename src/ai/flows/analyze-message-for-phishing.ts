@@ -44,8 +44,11 @@ const analyzeMessageForPhishingPrompt = ai.definePrompt({
   output: {schema: AnalyzeMessageForPhishingOutputSchema},
   prompt: `Analyze the following message for phishing and social engineering tactics. Provide a risk assessment and safety tips.
 
-Message: """{messageContent}"""
-Context: {{context}}
+Message:
+{{{messageContent}}}
+
+Context:
+{{{context}}}
 
 Evaluate for:
 1.  Urgency manipulation tactics
