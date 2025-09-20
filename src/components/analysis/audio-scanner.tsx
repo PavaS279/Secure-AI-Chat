@@ -24,7 +24,7 @@ const formSchema = z.object({
     .refine((files) => files?.length > 0, "Audio file is required.")
     .refine((files) => files?.[0]?.size <= MAX_FILE_SIZE, `Max file size is 10MB.`)
     .refine(
-      (files) => ACCEPTED_AUDIO_TYPES.includes(files?.[0]?.type),
+      (files) => files && ACCEPTED_AUDIO_TYPES.includes(files[0]?.type),
       ".mp3, .wav, .mpeg, and .webm files are accepted."
     ),
 });
@@ -46,8 +46,6 @@ export default function AudioScanner() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
-
-  const { ref: fileRef, ...fileRest } = form.register("audio");
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setAnalysisResult(null);
@@ -101,7 +99,6 @@ export default function AudioScanner() {
                             <Input 
                                 type="file" 
                                 accept={ACCEPTED_AUDIO_TYPES.join(",")}
-                                {...fileRest}
                                 onChange={(e) => {
                                     field.onChange(e.target.files);
                                     if (e.target.files?.[0]) {
@@ -126,7 +123,7 @@ export default function AudioScanner() {
                 </div>
               )}
 
-              <Button type="submit" disabled={isPending || !preview} className="w-full gap-2">
+              <Button type="submit" disabled={isPending || !form.formState.isValid} className="w-full gap-2">
                 {isPending ? <Loader2 className="animate-spin" /> : <Mic />}
                 Analyze Audio
               </Button>
