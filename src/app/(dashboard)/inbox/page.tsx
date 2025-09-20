@@ -11,6 +11,7 @@ import { analyzeMessageAction } from '@/app/actions';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import type { AnalyzeMessageForPhishingOutput } from '@/ai/flows/analyze-message-for-phishing';
+import { cn } from '@/lib/utils';
 
 type EmailAnalysis = {
   email: SampleEmail;
@@ -207,8 +208,4 @@ export default function InboxPage() {
       )}
     </div>
   );
-}
-
-function cn(...arg0: string[]): string | undefined {
-    return arg0.join(' ');
 }
